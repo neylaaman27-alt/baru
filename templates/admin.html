@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body style="font-family:sans-serif; text-align:center;">
+
+<h2>🔒 Halaman Admin</h2>
+
+<form method="POST">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Masuk</button>
+</form>
+
+{% if akses %}
+    <h3>Pesan Masuk 💌</h3>
+
+    {% for p in data %}
+        <div style="background:#ffe4ec; padding:10px; margin:10px; border-radius:10px;">
+            {{ p[1] }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
