@@ -1,26 +1,35 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffd6e0, #e0c3fc);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: radial-gradient(circle at 20% 30%, #ff9ecf, transparent 40%),
+                radial-gradient(circle at 80% 70%, #ff6ec7, transparent 40%),
+                radial-gradient(circle at 50% 50%, #d580ff, transparent 50%),
+                linear-gradient(135deg, #1a002f, #3a0ca3, #ff4ecd);
 }
 
-/* glitter full layar */
+/* glitter galaxy */
 .glitter {
     position: fixed;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 25px 25px;
-    animation: sparkle 3s linear infinite;
+    z-index: 0;
+
+    background-image: 
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(pink 1px, transparent 1px);
+
+    background-size: 25px 25px, 40px 40px;
+    animation: galaxyMove 10s linear infinite;
     opacity: 0.6;
 }
 
-@keyframes sparkle {
-    0% { transform: translateY(0); opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0.5; }
+@keyframes galaxyMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 100px 200px, -100px -200px; }
 }
 
 .container {
@@ -28,11 +37,12 @@ body {
     padding: 20px;
     position: relative;
     z-index: 2;
+    min-height: 100vh;
 }
 
 h1 {
     color: white;
-    font-size: 20px;
+    text-shadow: 0 0 10px pink, 0 0 20px violet;
 }
 
 .from {
@@ -42,11 +52,11 @@ h1 {
 
 .mingyu {
     width: 70%;
-    max-width: 250px;
+    max-width: 220px;
     border-radius: 20px;
     margin: 15px;
     animation: float 3s infinite;
-    box-shadow: 0 0 25px pink;
+    box-shadow: 0 0 20px pink;
 }
 
 @keyframes float {
@@ -69,14 +79,42 @@ button {
     border-radius: 20px;
 }
 
-/* animasi jatuh */
+/* jatuh */
 .star {
     position: fixed;
     top: -10px;
-    font-size: 20px;
     animation: fall linear infinite;
+    z-index: 1;
 }
 
 @keyframes fall {
     to { transform: translateY(110vh); }
+}
+
+.mingyu-pop {
+    position: fixed;
+    z-index: 1;
+    border-radius: 10px;
+    pointer-events: none;
+
+    animation: fadeMingyu 4s ease-in-out;
+    box-shadow: 0 0 10px pink;
+}
+
+@keyframes fadeMingyu {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
 }
