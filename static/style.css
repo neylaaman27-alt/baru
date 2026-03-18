@@ -31,16 +31,19 @@ body {
     from { background-position: 0 0, 0 0; }
     to { background-position: 100px 200px, -100px -200px; }
 }
-
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ⬅️ ini bikin semua ke tengah */
+    justify-content: center;
+
     text-align: center;
     padding: 20px;
     position: relative;
     z-index: 2;
     min-height: 100vh;
 }
-
-h1 {
+.h1 {
     color: white;
     text-shadow: 0 0 10px pink, 0 0 20px violet;
 }
@@ -94,7 +97,7 @@ button {
 
 .mingyu-pop {
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     border-radius: 10px;
     pointer-events: none;
 
@@ -156,4 +159,31 @@ button {
     font-size: 12px;
     color: #ffd6ec;
     text-shadow: 0 0 6px pink;
+}
+/* 💖 tombol play */
+button {
+    display: block;
+    margin: 10px auto;   /* ⬅️ center */
+    padding: 10px 15px;
+    border: none;
+    background: pink;
+    border-radius: 20px;
+}
+
+/* 💌 form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* ⬅️ center isi form */
+}
+
+/* textarea */
+textarea {
+    width: 90%;
+    max-width: 300px;
+    height: 100px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
 }
