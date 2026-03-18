@@ -51,10 +51,11 @@ h1 {
 }
 
 .mingyu {
+    display:block;
     width: 70%;
     max-width: 220px;
     border-radius: 20px;
-    margin: 15px;
+    margin: 15px auto;
     animation: float 3s infinite;
     box-shadow: 0 0 20px pink;
 }
@@ -117,4 +118,42 @@ button {
         opacity: 0;
         transform: scale(0.8);
     }
+}
+/* 💖 kotak aesthetic */
+.title-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+    display: inline-block;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+/* ✨ judul */
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff9ecf, #ffffff, #ff6ec7);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* 💌 isi teks */
+.subtitle {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+/* 💕 from (override yang lama) */
+.from {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ffd6ec;
+    text-shadow: 0 0 6px pink;
 }
